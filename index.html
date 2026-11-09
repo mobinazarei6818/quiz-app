@@ -2,13 +2,256 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quiz-app</title>
+    <title>Quizly – Test your code. Grow your skills.</title>
   </head>
-  <body>
-    <div id="app" class="w-full h-[10vh] bg-red-500"></div>
 
-    <script type="module" src="src/main.js"></script>
+  <body>
+    <header
+      class="mx-auto flex h-[76px] max-w-[1160px] items-center px-5 md:px-8 gap-8"
+    >
+      <a
+        href="#"
+        class="flex items-center gap-2.5 text-xl font-bold text-[#2A1B5E]"
+      >
+        <span
+          class="flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#6D3FD6] text-[15px] text-white"
+          >Q</span
+        >
+        Quizly
+      </a>
+
+      <nav
+        class="hidden gap-7 text-[15px] font-medium text-[#4A4560] md:flex md:w-[65%]"
+      >
+        <a href="#categories" class="hover:text-[#4C2A9E]">Categories</a>
+        <a href="#how-it-works" class="hover:text-[#4C2A9E]">How it works</a>
+        <a href="#about" class="hover:text-[#4C2A9E]">About</a>
+      </nav>
+
+      <a
+        href="#"
+        class="flex h-10 items-center justify-center rounded-xl border border-[#6D3FD6] bg-white px-[18px] text-sm font-semibold text-[#4C2A9E] transition hover:bg-[#F1ECFE]"
+        >Log in</a
+      >
+      <a
+        href="#"
+        class="flex h-10 items-center justify-center rounded-xl border border-[#6D3FD6] bg-[#6D3FD6] px-[18px] text-sm font-semibold text-white transition hover:bg-[#5B33C4]"
+        >Get started</a
+      >
+    </header>
+
+    <main>
+      <section
+        class="mx-auto flex max-w-[80%] flex-wrap items-center justify-between gap-12 px-5 pb-14 pt-10 md:px-8 md:pb-[88px] md:pt-[72px]"
+      >
+        <div>
+          <h1
+            class="max-w-[560px] text-[38px] font-extrabold leading-[1.1] text-[#2A1B5E] md:text-[56px]"
+          >
+            Test your code.
+            <span class="text-[#6D3FD6]">Grow your skills.</span>
+          </h1>
+          <p
+            class="mb-8 mt-5 max-w-[480px] text-lg leading-[1.7] text-[#5F5A73]"
+          >
+            Quizly is a quiz platform for web developers. Practice HTML, CSS,
+            JavaScript and Git with interactive quizzes and see how you improve.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="#"
+              class="flex h-[46px] items-center justify-center rounded-xl border border-[#6D3FD6] bg-[#6D3FD6] px-6 text-[15px] font-semibold text-white transition hover:bg-[#5B33C4]"
+              >Start for free</a
+            >
+            <a
+              href="#"
+              class="flex h-[46px] items-center justify-center rounded-xl border border-[#6D3FD6] bg-white px-6 text-[15px] font-semibold text-[#4C2A9E] transition hover:bg-[#F1ECFE]"
+              >Browse quizzes</a
+            >
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[460px] rounded-[20px] bg-[#2A1B5E] px-6 py-[22px] text-sm leading-[2.1] text-[#CDBFF5] shadow-[0_24px_48px_rgba(76,42,158,0.18)]"
+        >
+          <div class="mb-2.5 flex gap-1.5">
+            <i class="h-2.5 w-2.5 rounded-full bg-[#7C62C9]"></i>
+            <i class="h-2.5 w-2.5 rounded-full bg-[#7C62C9]"></i>
+            <i class="h-2.5 w-2.5 rounded-full bg-[#7C62C9]"></i>
+          </div>
+          <span class="block text-[#9A8CC7]"
+            >// Which method adds an item to an array?</span
+          >
+          <span class="text-[#F5B8E4]">const</span> list = [<span
+            class="text-[#8FE3C4]"
+            >1</span
+          >, <span class="text-[#8FE3C4]">2</span>];<br />
+          list.<span class="text-[#8FE3C4]">push</span>(<span
+            class="text-[#8FE3C4]"
+            >3</span
+          >);
+
+          <div
+            class="mt-3 flex items-center justify-between rounded-xl bg-white px-4 py-3 text-sm font-semibold text-[#1F1B2E]"
+          >
+            <span>Correct answer</span>
+            <b class="text-lg text-[#116B43]">+10</b>
+          </div>
+        </div>
+      </section>
+      <section
+        id="categories"
+        class="mx-auto max-w-[80%] px-5 py-12 md:px-8 md:py-[72px]"
+      >
+        <h2
+          class="text-center text-[28px] font-bold text-[#2A1B5E] md:text-4xl"
+        >
+          Four topics, one place
+        </h2>
+        <p
+          class="mx-auto mb-11 mt-3 max-w-[520px] text-center text-base leading-[1.7] text-[#5F5A73]"
+        >
+          Pick a topic and start practicing at your own pace.
+        </p>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- HTML -->
+          <article class="rounded-[18px] border border-[#ECE8F8] p-6">
+            <div
+              class="grid h-11 w-11 place-items-center rounded-xl bg-[#FFEDE3] text-sm font-bold text-[#B03A0A]"
+            >
+              &lt;/&gt;
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">HTML</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Page structure, semantic tags and forms.
+            </p>
+          </article>
+          <!-- CSS -->
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-11 w-11 place-items-center rounded-xl bg-[#E7F0FE] text-sm font-bold text-[#1D4ED8]"
+            >
+              { }
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">CSS</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Flexbox, grid and responsive layouts.
+            </p>
+          </article>
+          <!-- JavaScript -->
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-11 w-11 place-items-center rounded-xl bg-[#FFF4C7] text-sm font-bold text-[#7A5C00]"
+            >
+              JS
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">JavaScript</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Functions, the DOM and async code.
+            </p>
+          </article>
+          <!-- Git -->
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-11 w-11 place-items-center rounded-xl bg-[#F1ECFE] text-sm font-bold text-[#4C2A9E]"
+            >
+              Git
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">Git &amp; GitHub</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Commits, branches and pull requests.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        id="how-it-works"
+        class="mx-auto max-w-[80%] px-5 pb-12 pt-6 md:px-8 md:pb-[72px]"
+      >
+        <h2
+          class="text-center text-[28px] font-bold text-[#2A1B5E] md:text-4xl"
+        >
+          How it works
+        </h2>
+        <p
+          class="mx-auto mb-11 mt-3 max-w-[520px] text-center text-base leading-[1.7] text-[#5F5A73]"
+        >
+          Three simple steps to build a daily practice habit.
+        </p>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-9 w-9 place-items-center rounded-full bg-[#6D3FD6] font-bold text-white"
+            >
+              1
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">Choose a quiz</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Browse quizzes by topic and level.
+            </p>
+          </article>
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-9 w-9 place-items-center rounded-full bg-[#6D3FD6] font-bold text-white"
+            >
+              2
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">Answer questions</h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              Get instant feedback on every answer.
+            </p>
+          </article>
+          <article class="rounded-[18px] border border-[#ECE8F8] bg-white p-6">
+            <div
+              class="grid h-9 w-9 place-items-center rounded-full bg-[#6D3FD6] font-bold text-white"
+            >
+              3
+            </div>
+            <h3 class="mb-1.5 mt-4 text-lg font-semibold">
+              Track your progress
+            </h3>
+            <p class="text-sm leading-[1.7] text-[#5F5A73]">
+              See your scores, strengths and daily streak.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="mx-auto max-w-[1160px] px-5 pb-6 md:px-8">
+        <div
+          class="rounded-[28px] bg-[#4C2A9E] px-8 py-14 text-center text-white"
+        >
+          <h2 class="text-[28px] font-bold md:text-4xl">
+            Ready to test your skills?
+          </h2>
+          <p class="mb-7 mt-3 text-base text-[#E9E1FF]">
+            Take your first quiz in under a minute.
+          </p>
+          <a
+            href="#"
+            class="inline-flex h-[46px] items-center justify-center rounded-xl border border-white bg-white px-6 text-[15px] font-semibold text-[#3B1E85] transition hover:bg-[#F1ECFE]"
+            >Get started</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer
+      class="mx-auto flex max-w-[1160px] flex-wrap items-center justify-between gap-4 px-5 py-10 text-sm text-[#5F5A73] md:px-8"
+    >
+      <a
+        href="#"
+        class="flex items-center gap-2.5 text-base font-bold text-[#2A1B5E]"
+      >
+        <span
+          class="grid h-[26px] w-[26px] place-items-center rounded-lg bg-[#6D3FD6] text-[13px] text-white"
+          >Q</span
+        >
+        Quizly
+      </a>
+      <span>&copy; 2026 Quizly. [MOBINA ZAREI]</span>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
