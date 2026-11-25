@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizly – Dashboard</title>
+  </head>
+
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed hidden w-60 h-[100vh] flex-col gap-6 border-r border-[#ECE8F8] px-4 py-6 lg:flex"
+    >
+      <a
+        href="/index.html"
+        class="flex items-center gap-2.5 px-2 text-xl font-bold text-[#2A1B5E]"
+      >
+        <span
+          class="flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#6D3FD6] text-[15px] text-white"
+          >Q
+        </span>
+        Quizly
+      </a>
+
+      <nav class="flex flex-col gap-1 text-sm font-medium">
+        <a
+          href="/dashboard.html"
+          class="flex items-center gap-3 rounded-[10px] bg-[#F1ECFE] px-3 py-[11px] font-semibold text-[#4C2A9E]"
+        >
+          <img src="src/assets/icons/dashboard-purple.png" class="w-[20px]" />
+          Dashboard
+        </a>
+        <a
+          href="/quizzes.html"
+          class="flex items-center gap-3 rounded-[10px] px-3 py-[11px] text-[#4A4560] hover:bg-[#F6F3FF]"
+        >
+          <img
+            src="src/assets/icons/browse-quizzes-gray.png"
+            class="w-[20px]"
+          />
+          Browse Quizzes
+        </a>
+        <a
+          href="/progress.html"
+          class="flex items-center gap-3 rounded-[10px] px-3 py-[11px] text-[#4A4560] hover:bg-[#F6F3FF]"
+        >
+          <img src="src/assets/icons/my-progress-gray.png" class="w-[20px]" />
+          My Progress
+        </a>
+        <a
+          href="/about.html"
+          class="flex items-center gap-3 rounded-[10px] px-3 py-[11px] text-[#4A4560] hover:bg-[#F6F3FF]"
+        >
+          <img src="src/assets/icons/about-us-gray.png" class="w-[20px]" />
+          About Us
+        </a>
+      </nav>
+
+      <!-- Motivation card -->
+      <div
+        class="mt-auto rounded-2xl bg-[#F6F3FF] p-3.5 text-[13px] leading-relaxed text-[#4A4560]"
+      >
+        <b class="mb-0.5 block text-[#2A1B5E]">Keep practicing</b>
+        3 more quizzes to reach your weekly goal.
+      </div>
+
+      <!-- Dark mode switch (visual only for now) -->
+      <div
+        class="flex items-center justify-between px-2 text-[13px] text-[#4A4560]"
+      >
+        <span>Dark mode</span>
+        <button
+          type="button"
+          id="theme-toggle"
+          class="relative h-6 w-10 rounded-full bg-[#DDD5F7]"
+        >
+          <i
+            class="absolute left-[3px] top-[3px] h-[18px] w-[18px] rounded-full bg-white"
+          ></i>
+        </button>
+      </div>
+    </aside>
+
+    <div
+      class="flex min-h-screen flex-col gap-8 px-5 pb-14 pt-5 lg:pl-[280px] lg:pr-10"
+    >
+      <!-- Header -->
+      <header class="flex items-center gap-3">
+        <!-- menu hamberger -->
+        <button
+          type="button"
+          id="menu-btn"
+          class="grid h-11 w-11 place-items-center rounded-xl border border-[#ECE8F8] bg-white text-[#4A4560] lg:hidden"
+        ></button>
+
+        <label
+          class="flex h-11 max-w-[440px] flex-1 items-center gap-2.5 rounded-xl border border-[#ECE8F8] px-3.5 text-[#6B6585]"
+        >
+          <img src="src/assets/icons/search.png" class="w-[20px]" />
+          <input
+            type="search"
+            placeholder="Search quizzes..."
+            class="min-w-0 flex-1 bg-transparent text-sm text-[#1F1B2E] outline-none placeholder:text-[#6B6585]"
+          />
+        </label>
+
+        <button
+          type="button"
+          class="ml-auto grid h-11 w-11 place-items-center rounded-xl border border-[#ECE8F8] bg-white text-[#4A4560]"
+        >
+          <img src="src/assets/icons/bell.png" class="w-[20px]" />
+        </button>
+
+        <button
+          type="button"
+          class="flex h-11 items-center gap-2.5 rounded-xl border border-[#ECE8F8] bg-white py-1 pl-1 pr-3 text-sm font-semibold"
+        >
+          <span
+            class="flex h-9 w-9 items-center justify-center rounded-[9px] bg-[#D9CCF8] text-[13px] font-bold text-[#3B1E85]"
+            >SA</span
+          >
+          <span class="hidden sm:inline">Sara Ahmadi</span>
+          <img src="src/assets/icons/chevron-down.png" class="w-[15px]" />
+        </button>
+      </header>
+
+      <main class="flex flex-col gap-8">
+        <section
+          class="grid grid-cols-[7fr_fr] gap-8 rounded-[18px] border border-[#ECE8F8] bg-[linear-gradient(120deg,#fff_55%,#F4EFFF)] px-6 py-8 md:px-11 md:py-10"
+        >
+          <div class="max-w-[520px]">
+            <h1 class="text-[30px] font-bold text-[#2A1B5E] md:text-[34px]">
+              Welcome to Quizly!
+            </h1>
+            <p class="mt-1.5 text-[15px] leading-relaxed text-[#5F5A73]">
+              Test your programming knowledge with interactive quizzes, track
+              your progress and level up your skills.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/quizzes.html"
+                class="inline-flex h-11 items-center justify-center rounded-xl border border-[#6D3FD6] bg-[#6D3FD6] px-[22px] text-sm font-semibold text-white transition hover:bg-[#5B33C4]"
+                >Browse quizzes</a
+              >
+              <a
+                href="/index.html#how-it-works"
+                class="inline-flex h-11 items-center justify-center rounded-xl border border-[#6D3FD6] bg-white px-[22px] text-sm font-semibold text-[#4C2A9E] transition hover:bg-[#F1ECFE]"
+                >See how it works</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="hidden w-[340px] rounded-2xl bg-[#2A1B5E] px-5 py-[18px] font-mono text-[13px] leading-loose text-[#CDBFF5] md:block"
+          >
+            <div class="mb-2 flex gap-1.5">
+              <i class="h-[9px] w-[9px] rounded-full bg-[#7C62C9]"></i>
+              <i class="h-[9px] w-[9px] rounded-full bg-[#7C62C9]"></i>
+              <i class="h-[9px] w-[9px] rounded-full bg-[#7C62C9]"></i>
+            </div>
+            <span class="text-[#F5B8E4]">const</span> quiz =
+            <span class="text-[#8FE3C4]">start</span>("JavaScript");<br />
+            quiz.<span class="text-[#8FE3C4]">score</span>();
+            <span class="text-[#9A8CC7]">// 92%</span>
+          </div>
+        </section>
+
+        <!-- ============ STATS ============ -->
+        <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]">
+            <div class="text-[13px] text-[#5F5A73]">Quizzes taken</div>
+            <div class="mt-1 text-[28px] font-bold">24</div>
+          </div>
+          <div class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]">
+            <div class="text-[13px] text-[#5F5A73]">Average score</div>
+            <div class="mt-1 text-[28px] font-bold">82%</div>
+          </div>
+          <div class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]">
+            <div class="text-[13px] text-[#5F5A73]">Best score</div>
+            <div class="mt-1 text-[28px] font-bold">98%</div>
+          </div>
+          <div class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]">
+            <div class="text-[13px] text-[#5F5A73]">Day streak</div>
+            <div class="mt-1 text-[28px] font-bold">7 days</div>
+          </div>
+        </section>
+
+        <!-- ============ CATEGORIES ============ -->
+        <section>
+          <h2 class="mb-4 text-lg font-semibold">Popular categories</h2>
+
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- HTML -->
+            <article
+              class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]"
+            >
+              <div
+                class="grid h-10 w-10 place-items-center rounded-xl bg-[#FFEDE3] text-[13px] font-bold text-[#B03A0A]"
+              >
+                &lt;/&gt;
+              </div>
+              <h3 class="mb-1 mt-4 text-[17px] font-semibold">HTML</h3>
+              <p class="mb-4 text-sm leading-relaxed text-[#5F5A73]">
+                Page structure, semantic tags and forms.
+              </p>
+              <div
+                class="flex items-center justify-between text-[13px] text-[#5F5A73]"
+              >
+                <span>18 quizzes</span>
+                <a
+                  href="/quizzes.html?category=html"
+                  class="text-sm font-semibold text-[#4C2A9E]"
+                  >View quizzes →</a
+                >
+              </div>
+            </article>
+
+            <!-- CSS -->
+            <article
+              class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]"
+            >
+              <div
+                class="grid h-10 w-10 place-items-center rounded-xl bg-[#E7F0FE] text-[13px] font-bold text-[#1D4ED8]"
+              >
+                { }
+              </div>
+              <h3 class="mb-1 mt-4 text-[17px] font-semibold">CSS</h3>
+              <p class="mb-4 text-sm leading-relaxed text-[#5F5A73]">
+                Flexbox, grid and responsive layouts.
+              </p>
+              <div
+                class="flex items-center justify-between text-[13px] text-[#5F5A73]"
+              >
+                <span>22 quizzes</span>
+                <a
+                  href="/quizzes.html?category=css"
+                  class="text-sm font-semibold text-[#4C2A9E]"
+                  >View quizzes →</a
+                >
+              </div>
+            </article>
+
+            <!-- JavaScript -->
+            <article
+              class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]"
+            >
+              <div
+                class="grid h-10 w-10 place-items-center rounded-xl bg-[#FFF4C7] text-[13px] font-bold text-[#7A5C00]"
+              >
+                JS
+              </div>
+              <h3 class="mb-1 mt-4 text-[17px] font-semibold">JavaScript</h3>
+              <p class="mb-4 text-sm leading-relaxed text-[#5F5A73]">
+                Functions, the DOM and async code.
+              </p>
+              <div
+                class="flex items-center justify-between text-[13px] text-[#5F5A73]"
+              >
+                <span>35 quizzes</span>
+                <a
+                  href="/quizzes.html?category=js"
+                  class="text-sm font-semibold text-[#4C2A9E]"
+                  >View quizzes →</a
+                >
+              </div>
+            </article>
+
+            <!-- Git -->
+            <article
+              class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]"
+            >
+              <div
+                class="grid h-10 w-10 place-items-center rounded-xl bg-[#F1ECFE] text-[13px] font-bold text-[#4C2A9E]"
+              >
+                Git
+              </div>
+              <h3 class="mb-1 mt-4 text-[17px] font-semibold">Git & GitHub</h3>
+              <p class="mb-4 text-sm leading-relaxed text-[#5F5A73]">
+                Commits, branches and pull requests.
+              </p>
+              <div
+                class="flex items-center justify-between text-[13px] text-[#5F5A73]"
+              >
+                <span>12 quizzes</span>
+                <a
+                  href="/quizzes.html?category=git"
+                  class="text-sm font-semibold text-[#4C2A9E]"
+                  >View quizzes →</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ CHALLENGE + RECENT ============ -->
+        <section class="grid gap-5 lg:grid-cols-[5fr_7fr]">
+          <!-- Today's challenge -->
+          <div
+            class="flex flex-col gap-3.5 rounded-[18px] border border-[#4C2A9E] bg-[#4C2A9E] p-[22px] text-white"
+          >
+            <span class="text-[13px] font-semibold text-[#D9CCF8]"
+              >Today's challenge</span
+            >
+            <h2 class="text-[22px] font-semibold">CSS Selectors Sprint</h2>
+            <div class="text-sm leading-[1.8] text-[#E9E1FF]">
+              CSS · 10 questions<br />
+              7-day streak
+            </div>
+            <a
+              href="/quiz.html?id=css-selectors-sprint"
+              class="mt-auto inline-flex h-11 items-center justify-center rounded-xl border border-white bg-white px-[22px] text-sm font-semibold text-[#3B1E85] transition hover:bg-[#F1ECFE]"
+              >Start challenge</a
+            >
+          </div>
+
+          <!-- Recent activity -->
+          <div class="rounded-[18px] border border-[#ECE8F8] bg-white p-[22px]">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-semibold">Recent activity</h2>
+              <a
+                href="/progress.html"
+                class="text-sm font-semibold text-[#5B33C4]"
+                >View all</a
+              >
+            </div>
+
+            <div
+              class="flex items-center gap-3.5 border-b border-[#F1EEFA] py-3.5 first:pt-0"
+            >
+              <div
+                class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#FFF4C7] text-[13px] font-bold text-[#7A5C00]"
+              >
+                JS
+              </div>
+              <div class="min-w-0 flex-1">
+                <b class="block text-sm font-semibold">Functions & Scope</b>
+                <small class="text-[13px] text-[#5F5A73]"
+                  >JavaScript · 15 questions</small
+                >
+              </div>
+              <span class="hidden text-[13px] text-[#5F5A73] sm:block"
+                >2h ago</span
+              >
+              <span
+                class="rounded-full bg-[#E7F6EF] px-3 py-1 text-[13px] font-semibold text-[#116B43]"
+                >93%</span
+              >
+            </div>
+
+            <div
+              class="flex items-center gap-3.5 border-b border-[#F1EEFA] py-3.5"
+            >
+              <div
+                class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#E7F0FE] text-[13px] font-bold text-[#1D4ED8]"
+              >
+                { }
+              </div>
+              <div class="min-w-0 flex-1">
+                <b class="block text-sm font-semibold">Flexbox Basics</b>
+                <small class="text-[13px] text-[#5F5A73]"
+                  >CSS · 12 questions</small
+                >
+              </div>
+              <span class="hidden text-[13px] text-[#5F5A73] sm:block"
+                >Yesterday</span
+              >
+              <span
+                class="rounded-full bg-[#E7F6EF] px-3 py-1 text-[13px] font-semibold text-[#116B43]"
+                >88%</span
+              >
+            </div>
+
+            <div class="flex items-center gap-3.5 pb-0 pt-3.5">
+              <div
+                class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#FFEDE3] text-[13px] font-bold text-[#B03A0A]"
+              >
+                &lt;/&gt;
+              </div>
+              <div class="min-w-0 flex-1">
+                <b class="block text-sm font-semibold">Semantic HTML</b>
+                <small class="text-[13px] text-[#5F5A73]"
+                  >HTML · 10 questions</small
+                >
+              </div>
+              <span class="hidden text-[13px] text-[#5F5A73] sm:block"
+                >2 days ago</span
+              >
+              <span
+                class="rounded-full bg-[#FFF1DB] px-3 py-1 text-[13px] font-semibold text-[#8A4B00]"
+                >70%</span
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
